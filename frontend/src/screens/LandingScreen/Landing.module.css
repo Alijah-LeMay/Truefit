@@ -1,0 +1,69 @@
+.landing_Container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.landing_Container h1 {
+  margin: 0;
+}
+.landing_featuredContainer {
+  padding: 30px 0;
+}
+.textBanner {
+  font-size: 2.3rem;
+  margin: 50px 0;
+  font-family: sans-serif;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.firstCards_container {
+  display: flex;
+  padding-bottom: 30px;
+}
+.firstCards_container h2 {
+  font-size: 1.5rem;
+  color: #333;
+  font-family: sans-serif;
+  padding: 20px 0;
+}
+.firstCards_container p {
+  color: #333;
+  padding-top: 20px 0;
+  font-size: 1.2rem;
+}
+.icon {
+  font-size: 4rem;
+  font-family: sans-serif;
+}
+
+.infoSection_container {
+  display: flex;
+  padding: 50px 0;
+}
+.infoSection_right {
+  flex: 3;
+  text-align: left;
+}
+.infoSection_container img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+.infoSection_container h3,
+.infoSection_container h2,
+.infoSection_container p {
+  padding: 0 10px;
+}
+
+.infoSection_container h3 {
+  color: #3d5aaf;
+  font-size: 1.3rem;
+}
+.infoSection_right h2 {
+  padding-bottom: 20px;
+}
+.infoSection_container p {
+  font-size: 1.2rem;
+}

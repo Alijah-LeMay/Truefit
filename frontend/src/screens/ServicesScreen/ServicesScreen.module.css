@@ -1,0 +1,65 @@
+.servicesScreen_container {
+  width: 100%;
+  margin: 0;
+}
+
+.infoSection_container,
+.seoSection_container,
+.quoteSection_container {
+  display: flex;
+  align-items: center;
+  padding: 50px 0;
+}
+.infoSection_right,
+.seoSection_right,
+.quoteSection_right {
+  flex: 3;
+  text-align: left;
+}
+.infoSection_container img,
+.seoSection_container img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+.infoSection_container h3,
+.seoSection_container h3,
+.quoteSection_container h3,
+.infoSection_container h2,
+.seoSection_container h2,
+.quoteSection_container h2,
+.infoSection_container p,
+.seoSection_container p,
+.quoteSection_container p {
+  padding: 0 10px;
+}
+
+.infoSection_right h2,
+.seoSection_right h2,
+.quoteSection_right h2 {
+  color: black;
+  padding-bottom: 20px;
+  font-size: 1.6rem;
+}
+.infoSection_container p,
+.seoSection_container p,
+.quoteSection_container p {
+  font-size: 1.2rem;
+}
+.infoSection_container h3 {
+  color: #3d5aaf;
+  font-size: 1.5rem;
+}
+.seoSection_container h3,
+.quoteSection_container h3 {
+  color: #4bb781;
+  font-size: 1.5rem;
+}
+.quoteSection_container h2 {
+  color: white;
+  font-size: 1.6rem;
+}
+.quoteSection_container p {
+  color: white;
+  font-size: 1.2rem;
+}
