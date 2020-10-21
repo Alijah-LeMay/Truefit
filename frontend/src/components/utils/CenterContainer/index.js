@@ -24,7 +24,7 @@ const CenterContainer = ({
     container: {
       display: 'flex',
       flexDirection: direction,
-      justifyContent: justify ? justify : 'space-between',
+      justifyContent: justify && justify,
       textAlign: 'center',
       padding: 0,
       maxWidth: '100%',
@@ -50,7 +50,7 @@ const CenterContainer = ({
         overFlow: 'hidden',
         display: 'flex',
         flexDirection: direction,
-        justifyContent: justify ? justify : 'space-around',
+        justifyContent: justify && justify,
         textAlign: 'center',
         position: 'relative',
         padding: bgPadding && bgPadding,

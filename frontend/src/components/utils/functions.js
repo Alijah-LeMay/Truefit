@@ -13,11 +13,15 @@ export const titleCase = (str) => {
 
 // Cuts a (text) at a given max length (limit) and adds...
 export const elipsesText = (text, limit) => {
-  if (text.length > limit) {
-    const cut = text.slice(0, limit);
-    const elips = cut.concat('...');
-    return elips;
+  if (!text) {
+    console.log(`elipses input is ${text}`);
   } else {
-    return text;
+    if (text.length > limit) {
+      const cut = text.slice(0, limit);
+      const elips = cut.concat('...');
+      return elips;
+    } else {
+      return text;
+    }
   }
 };

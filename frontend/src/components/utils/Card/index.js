@@ -43,6 +43,7 @@ const Card = ({ height, padding, margin, variant, children, align }) => {
       margin: margin ? margin : '20px',
     };
   }
+
   return <div style={rStyle}>{children}</div>;
 };
 

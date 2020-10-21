@@ -1,38 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+// Assets
 import classes from './Navbar.module.css';
+
+// My Components
+import HamburgerMenu from './HamburgerMenu';
+import NavigationItems from './NavigationItems';
 import CenterContainer from '../../utils/CenterContainer';
-import banner_white from '../../../assets/banner_white.png';
+import OutlinedNavBtn from './OutlinedNavBtn';
+import Logo from '../../Logo';
 
 const Navbar = () => {
+  const [showSideDrawer, setShowSideDrawer] = useState(false);
+
+  const drawerToggleHandler = () => {
+    setShowSideDrawer(!showSideDrawer);
+  };
+  const drawerCloseHandler = () => {
+    setShowSideDrawer(false);
+  };
+
+  console.log(showSideDrawer);
   return (
     <CenterContainer>
       <nav className={classes.nav}>
         <div className={classes.headerLogo}>
           <Link to='/'>
-            <img
-              style={{ width: '250px' }}
-              src={banner_white}
-              alt='The Web Developers'
-            />
+            <Logo />
           </Link>
         </div>
 
-        <ul className={classes.ul}>
-          <li className={classes.li}>
-            <Link to='/'>Home</Link>
-          </li>
-          <li className={classes.li}>
-            <Link to='/services'>Services</Link>
-          </li>
-          <li className={classes.li}>
-            <Link to='/our_work'>Our Work</Link>
-          </li>
-
-          <li className={classes.liQuote}>
-            <Link to='/quote'>Quote</Link>
-          </li>
+        <ul className={classes.desktop_container}>
+          <NavigationItems />
+          <OutlinedNavBtn to='/quote' content='Quote' />
         </ul>
+        <HamburgerMenu
+          showBack={showSideDrawer}
+          clicked={drawerToggleHandler}
+          close={drawerCloseHandler}
+        />
       </nav>
     </CenterContainer>
   );

@@ -69,7 +69,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li style={rStyle.li}>
-                <Link to='/our_work' style={rStyle.a}>
+                <Link to='/ourwork' style={rStyle.a}>
                   <p key='r3' style={rStyle.aHover}>
                     Our Work
                   </p>

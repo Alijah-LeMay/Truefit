@@ -13,7 +13,6 @@ const ArticleContainer = ({ category, title, imageLOC, description, link }) => {
     container: {
       width: '275px',
       padding: '20px',
-      height: '300px',
     },
     image: {
       width: '100%',
@@ -45,7 +44,9 @@ const ArticleContainer = ({ category, title, imageLOC, description, link }) => {
       <h2 style={rStyle.title}>{updatedTitle}</h2>
       <p style={rStyle.description}>{elipsesText(description, 100)}</p>
       <div style={rStyle.linkContainer}>
-        <Link style={rStyle.link}>Read More</Link>
+        <Link style={rStyle.link} to={link}>
+          Read More
+        </Link>
       </div>
     </div>
   );

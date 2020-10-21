@@ -1,5 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
+import classes from './ImageBanner.module.css';
+import CenterContainer from '../CenterContainer';
 
 const ImageBanner = ({
   imageLOC,
@@ -31,7 +33,7 @@ const ImageBanner = ({
       position: 'absolute',
       top: '50%',
       margin: '0 0 0 20px',
-      fontSize: '2.7rem',
+      fontSize: '2.5rem',
       color: 'white',
       zIndex: 1,
     },
@@ -52,7 +54,10 @@ const ImageBanner = ({
   if (bgOpacity) {
     template = (
       <div style={rStyle.container}>
-        <h1 style={rStyle.label}>{label}</h1>
+        <CenterContainer>
+          <h1 className={classes.label}>{label}</h1>
+        </CenterContainer>
+
         <img src={imageLOC} style={rStyle.image} alt={altText} />
         <div style={rStyle.opaque}></div>
       </div>

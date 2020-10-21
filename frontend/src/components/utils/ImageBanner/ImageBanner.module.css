@@ -1,0 +1,14 @@
+.label {
+  position: absolute;
+  top: 50%;
+  margin: 0 0 0 20px;
+  padding: 0 0 0 30px;
+  color: #fff;
+  font-size: 2.5rem;
+  z-index: 1;
+}
+@media (max-width: 1080px) {
+  .label {
+    font-size: 2rem;
+  }
+}
