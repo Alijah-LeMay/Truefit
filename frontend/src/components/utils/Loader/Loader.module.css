@@ -1,5 +1,4 @@
 .Loader {
-  font-size: 10px;
   margin: 50px auto;
   text-indent: -9999em;
   width: 11em;
@@ -45,7 +44,7 @@
   content: '';
 }
 .Loader:after {
-  background: #fff;
+  background: white;
   width: 75%;
   height: 75%;
   border-radius: 50%;

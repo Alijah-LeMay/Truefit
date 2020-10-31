@@ -1,40 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Radium from 'radium';
+import classes from './Navbar.module.css';
 
 // Assets
 
-const OutlinedNavBtn = ({ to, content, children }) => {
-  let rStyle = {
-    li: {
-      float: 'left',
-      margin: 0,
-      padding: 0,
-    },
-    button: {
-      textDecoration: 'none',
-      margin: 0,
-      padding: 0,
-    },
-    buttonPara: {
-      alignSelf: 'center',
-      padding: '10px',
-      margin: 'auto 0',
-      fontSize: '1.2rem',
-      borderRadius: '40px',
-      backgroundColor: 'white',
-      color: '#333',
-      borderWidth: '0px',
-      ':hover': {
-        color: '#4bb781',
-      },
-    },
-  };
+const OutlinedNavBtn = ({ to, content, children, mobile }) => {
+  let currentlyActiveStyle = { color: '#4bb781' };
+  const currentClass = mobile
+    ? classes.mobile_outlined_nav_li
+    : classes.outlined_nav_li;
   return (
-    <li style={rStyle.li}>
-      <Link to={to} style={rStyle.button}>
-        <p style={rStyle.buttonPara}>{content ? content : children}</p>
-      </Link>
+    <li className={currentClass}>
+      <NavLink
+        className={classes.wideLink}
+        to={to}
+        activeStyle={currentlyActiveStyle}
+      >
+        {content ? content : children}
+      </NavLink>
     </li>
   );
 };

@@ -1,19 +1,22 @@
 import React from 'react';
 // fontawesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 import classes from './Navbar.module.css';
 
 // My Components
 import Backdrop from '../../utils/Backdrop';
 import NavigationItems from './NavigationItems';
 import Logo from '../../Logo';
+import OutlinedNavBtn from './OutlinedNavBtn';
 
 const HamburgerMenu = (props) => {
   return (
     <>
       <div className={classes.hamburger_container} onClick={props.clicked}>
-        <FontAwesomeIcon icon={faBars} size='lg' color='white' />
+        <i
+          className='fas fa-bars'
+          style={{ color: '#fff', fontSize: '1.3rem' }}
+        ></i>
       </div>
       <Backdrop show={props.showBack} clicked={props.close} />
 
@@ -24,6 +27,7 @@ const HamburgerMenu = (props) => {
       >
         <ul className={classes.drawerlist_container}>
           <NavigationItems clicked={props.close} mobile />
+          <OutlinedNavBtn content='Quote' to='/quote' mobile />
         </ul>
         <div className={classes.spacing_container}>
           <div className={classes.logo_container}>

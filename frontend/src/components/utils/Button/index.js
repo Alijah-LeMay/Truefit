@@ -15,6 +15,7 @@ const MyButton = ({
   to,
   children,
   dir,
+  radius,
 }) => {
   let direction;
   if (dir === 'left') {
@@ -32,7 +33,7 @@ const MyButton = ({
       color: color ? color : '#333',
       padding: padding ? padding : '15px 30px',
       backgroundColor: 'white',
-      borderRadius: '40px',
+      borderRadius: radius ? radius : '40px',
       fontSize: fontSize ? fontSize : '1.2rem',
       boxShadow:
         '0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 -2px 5px 0 rgba(0, 0, 0, 0.19)',
@@ -50,7 +51,7 @@ const MyButton = ({
       color: color ? color : '#333',
       padding: padding ? padding : '15px 30px',
       backgroundColor: 'white',
-      borderRadius: '40px',
+      borderRadius: radius ? radius : '40px',
       fontSize: fontSize ? fontSize : '1.2rem',
       boxShadow:
         '0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 -2px 5px 0 rgba(0, 0, 0, 0.19)',
@@ -66,6 +67,19 @@ const MyButton = ({
     if (styleVariant === 'clear') {
       rStyle = {
         containerDiv: { alignSelf: direction && direction },
+        submitBtn: {
+          display: 'inline-block',
+          padding: padding ? padding : '15px',
+          height: 'auto',
+          fontSize: fontSize ? fontSize : '1.2rem',
+          borderRadius: radius ? radius : '40px',
+          backgroundColor: bgColor ? bgColor : 'white',
+          color: color ? color : '#333',
+          borderWidth: '0px',
+          ':hover': {
+            color: hoverColor ? hoverColor : 'white',
+          },
+        },
 
         button: {
           textDecoration: 'none',
@@ -75,7 +89,7 @@ const MyButton = ({
           padding: padding ? padding : '15px',
           height: 'auto',
           fontSize: fontSize ? fontSize : '1.2rem',
-          borderRadius: '40px',
+          borderRadius: radius ? radius : '40px',
           backgroundColor: bgColor ? bgColor : 'white',
           color: color ? color : '#333',
           borderWidth: '0px',

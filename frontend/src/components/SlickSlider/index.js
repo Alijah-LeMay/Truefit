@@ -6,7 +6,6 @@ import Slide from './Slide';
 const SlickSlider = ({
   images,
   height,
-  width,
   slidesToShow,
   dots,
   arrows,
@@ -23,13 +22,21 @@ const SlickSlider = ({
     dots: dots ? dots : false,
     arrows: arrows ? arrows : false,
     slidesToScroll: slidesToScroll ? slidesToScroll : 1,
+    responsive: [
+      {
+        breakpoint: 440,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: dots ? dots : false,
+          arrows: arrows ? arrows : false,
+        },
+      },
+    ],
   };
 
   let defaultHeight = height ? `${height}px` : '250px';
-
-  let calculatedWidth = `${width * settings.slidesToShow}px`;
-  if (images.length < settings.slidesToShow)
-    calculatedWidth = `${width * images.length}px`;
 
   return (
     <div className={classes.slider_container}>

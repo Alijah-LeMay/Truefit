@@ -17,19 +17,19 @@ let rStyle = {
     marginBottom: '30px',
   },
   ul: {
+    maxWidth: '100%',
     listStyleType: 'none',
     margin: 0,
-    padding: 0,
     alignSelf: 'center',
+    paddingInlineStart: 0,
   },
   li: {
     listStyleType: 'none',
-    display: 'inline',
-    padding: '15px',
+    display: 'inline-flex',
+    padding: '5px 10px',
   },
   a: {
     textDecoration: 'none',
-    fontSize: '1.1rem',
   },
   aHover: {
     display: 'inline',
@@ -37,12 +37,19 @@ let rStyle = {
     ':hover': {
       color: '#4BB781',
     },
+    '@media (max-width:440px)': {
+      fontSize: '0.9rem',
+    },
   },
   copyRight: {
     fontSize: '1.1rem',
     color: 'black',
     fontWeight: 'normal',
     padding: '10px 0',
+
+    '@media (max-width:440px)': {
+      fontSize: '0.9rem',
+    },
   },
 };
 
@@ -75,22 +82,22 @@ const Footer = () => {
                   </p>
                 </Link>
               </li>
-              <li style={rStyle.li}>
+              {/* <li style={rStyle.li}>
                 <Link to='/blog' style={rStyle.a}>
                   <p key='r4' style={rStyle.aHover}>
                     Blog
                   </p>
                 </Link>
-              </li>
-              <li style={rStyle.li}>
-                <Link to='/privacy_policy' style={rStyle.a}>
+              </li> */}
+              {/* <li style={rStyle.li}>
+                <Link to='/privacy' style={rStyle.a}>
                   <p key='r5' style={rStyle.aHover}>
                     Privacy Policy
                   </p>
                 </Link>
-              </li>
+              </li> */}
             </ul>
-            <h3 style={rStyle.copyRight}>Copyright &copy; 2020 LemaTech LLC</h3>
+            <h3 style={rStyle.copyRight}>&copy; LemaTech LLC 2020 </h3>
           </div>
         </CenterContainer>
       </div>

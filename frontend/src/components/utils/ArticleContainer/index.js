@@ -8,7 +8,6 @@ import { titleCase, elipsesText } from '../functions';
 const ArticleContainer = ({ category, title, imageLOC, description, link }) => {
   let updatedTitle = titleCase(title);
 
-  console.log(updatedTitle);
   let rStyle = {
     container: {
       width: '275px',

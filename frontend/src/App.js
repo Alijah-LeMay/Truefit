@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { StyleRoot } from 'radium';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -21,23 +22,25 @@ import LandingScreen from './screens/LandingScreen';
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <Fragment>
-        <CenterContainer bgColor='black' bgPadding='50px 0 0 0'>
-          <ImageBanner
-            imageLOC={TrueFit}
-            altText='Home page Banner'
-            bgColor='black'
-            height='100%'
-          />
-        </CenterContainer>
+      <StyleRoot>
+        <Fragment>
+          <CenterContainer bgColor='black' bgPadding='50px 0 0 0'>
+            <ImageBanner
+              imageLOC={TrueFit}
+              altText='Home page Banner'
+              bgColor='black'
+              height='100%'
+            />
+          </CenterContainer>
 
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={LandingScreen} />
-          <Route exact path='/login' component={LoginScreen} />
-        </Switch>
-        <Footer />
-      </Fragment>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={LandingScreen} />
+            <Route exact path='/login' component={LoginScreen} />
+          </Switch>
+          <Footer />
+        </Fragment>
+      </StyleRoot>
     </BrowserRouter>
   </Provider>
 );

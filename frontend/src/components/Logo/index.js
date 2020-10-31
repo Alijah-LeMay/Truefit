@@ -8,6 +8,9 @@ const Logo = ({ width }) => {
   let rStyle = {
     image: {
       width: width ? width : '250px',
+      '@media (max-width:440px)': {
+        width: '150px',
+      },
     },
   };
   return (

@@ -10,7 +10,6 @@ const ImageBanner = ({
   bgOpacity,
   opacity,
   bgColor,
-  height,
 }) => {
   let bgColorOpacity = `rgba(0,0,0,0)`;
   if (bgOpacity) {
@@ -26,9 +25,18 @@ const ImageBanner = ({
       backgroundColor: bgColor ? bgColor : 'white',
     },
     image: {
-      height: height ? height : '600px',
-      width: '95%',
+      height: '400px',
+      minHeight: '300px',
+      width: '100%',
       objectFit: 'cover',
+      '@media (max-width:980px)': {
+        height: '300px',
+        minHeight: '200px',
+      },
+      '@media (max-width:440px)': {
+        height: '250px',
+        minHeight: '200px',
+      },
     },
     label: {
       position: 'absolute',
@@ -37,12 +45,15 @@ const ImageBanner = ({
       fontSize: '2.5rem',
       color: 'white',
       zIndex: 1,
+      '@media (max-width:980px)': {
+        fontSize: '2rem',
+      },
     },
     opaque: {
       position: 'absolute',
       backgroundColor: bgColorOpacity,
       width: '100%',
-      height: '99%',
+      height: '100%',
       top: 0,
     },
   };

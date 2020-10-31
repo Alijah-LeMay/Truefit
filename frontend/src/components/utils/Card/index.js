@@ -1,7 +1,15 @@
 import React from 'react';
 import Radium from 'radium';
 
-const Card = ({ height, padding, margin, variant, children, align }) => {
+const Card = ({
+  height,
+  padding,
+  margin,
+  variant,
+  children,
+  align,
+  radius,
+}) => {
   let alignment = 'center';
   if (align === 'left') {
     alignment = 'left';
@@ -21,7 +29,7 @@ const Card = ({ height, padding, margin, variant, children, align }) => {
     padding: padding ? padding : '30px 16px',
     flex: 1,
     height: height && height,
-    borderRadius: '20px',
+    borderRadius: radius ? radius : '20px',
     margin: margin ? margin : '20px',
     ':hover': {
       boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
@@ -39,7 +47,7 @@ const Card = ({ height, padding, margin, variant, children, align }) => {
       padding: padding ? padding : '30px 16px',
       flex: 1,
       height: height && height,
-      borderRadius: '20px',
+      borderRadius: radius ? radius : '20px',
       margin: margin ? margin : '20px',
     };
   }
