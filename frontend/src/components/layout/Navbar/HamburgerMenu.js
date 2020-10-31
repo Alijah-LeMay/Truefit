@@ -27,13 +27,12 @@ const HamburgerMenu = (props) => {
       >
         <ul className={classes.drawerlist_container}>
           <NavigationItems clicked={props.close} mobile />
-          <OutlinedNavBtn content='Quote' to='/quote' mobile />
         </ul>
-        <div className={classes.spacing_container}>
+        {/* <div className={classes.spacing_container}>
           <div className={classes.logo_container}>
             <Logo width='180px' />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

@@ -7,8 +7,10 @@ const NavigationItems = ({ mobile, color }) => {
 
   let navItems = [
     { to: '/', name: 'Home' },
-    { to: '/services', name: 'Services' },
-    { to: '/ourwork', name: 'Our Work' },
+    { to: '/training', name: 'In Person Training' },
+    { to: '/meals', name: 'Meal Plans' },
+    { to: '/testimonials', name: 'Testimonials' },
+    { to: '/contact', name: 'Contact Us' },
   ];
 
   return (
