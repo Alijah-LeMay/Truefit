@@ -10,6 +10,7 @@ const ImageBanner = ({
   bgOpacity,
   opacity,
   bgColor,
+  height,
 }) => {
   let bgColorOpacity = `rgba(0,0,0,0)`;
   if (bgOpacity) {
@@ -25,8 +26,8 @@ const ImageBanner = ({
       backgroundColor: bgColor ? bgColor : 'white',
     },
     image: {
-      height: '400px',
-      width: '100%',
+      height: height ? height : '600px',
+      width: '95%',
       objectFit: 'cover',
     },
     label: {

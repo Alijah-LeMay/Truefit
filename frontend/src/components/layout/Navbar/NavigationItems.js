@@ -23,20 +23,40 @@ const NavigationItems = ({ clicked, mobile }) => {
         <NavLink
           exact
           activeStyle={currentlyActiveStyle}
-          to='/services'
+          to='/training'
           onClick={clicked}
         >
-          Services
+          In Person Training
         </NavLink>
       </li>
       <li>
         <NavLink
           exact
           activeStyle={currentlyActiveStyle}
-          to='/ourwork'
+          to='/meals'
           onClick={clicked}
         >
-          Our Work
+          Meal Plans
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          exact
+          activeStyle={currentlyActiveStyle}
+          to='/testimonials'
+          onClick={clicked}
+        >
+          Testimonials
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          exact
+          activeStyle={currentlyActiveStyle}
+          to='/contact'
+          onClick={clicked}
+        >
+          Contact Us
         </NavLink>
       </li>
     </>

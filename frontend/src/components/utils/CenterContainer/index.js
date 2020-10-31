@@ -11,6 +11,7 @@ const CenterContainer = ({
   bgImageAlt,
   Horizontal,
   justify,
+  width,
 }) => {
   let direction = 'column';
   if (Horizontal) {
@@ -28,7 +29,7 @@ const CenterContainer = ({
       textAlign: 'center',
       padding: 0,
       maxWidth: '100%',
-      width: '1200px',
+      width: width ? width : '1200px',
       margin: 'auto',
     },
   };
@@ -55,7 +56,7 @@ const CenterContainer = ({
         position: 'relative',
         padding: bgPadding && bgPadding,
         maxWidth: '100%',
-        width: '1200px',
+        width: width ? width : '1200px',
         margin: 'auto',
         zIndex: '10',
       },

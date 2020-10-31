@@ -6,14 +6,14 @@ const jwt = require('jsonwebtoken');
 // Models
 const User = require('../models/User');
 
-// @route       Auth user & get token
 // desc         POST /api/users/login
+// @route       Login user & get user
 // @access      Public
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
-
+  console.log(user);
   if (user && (await user.matchPassword(password))) {
     res.json({
       _id: user._id,
@@ -28,11 +28,11 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @route       Register user & create token
 // desc         POST /api/users/login
+// @route       Register user & create token
 // @access      Public
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, isAdmin } = req.body;
 
   const userExists = await User.findOne({ email });
 
@@ -44,6 +44,7 @@ const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password,
+    isAdmin: isAdmin && isAdmin,
   });
   if (user) {
     res.status(201).json({

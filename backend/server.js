@@ -5,7 +5,6 @@ const connectDB = require('./config/db');
 const path = require('path');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const userRoutes = require('./routes/userRoutes');
-const ourWorkRoutes = require('./routes/ourWorkRoutes');
 
 const app = express();
 
@@ -19,14 +18,14 @@ app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send('API Running'));
 
 // Define Routes
-app.use('/api/users', userRoutes);
-app.use('/api/ourwork', ourWorkRoutes);
+app.use('/api/user', userRoutes);
 
 //
 // Image upload route
 app.use('/api/upload', require('./routes/upload'));
 // Make uploads folder statis
-app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+const dirname = path.resolve();
+app.use('/uploads', express.static(path.join(dirname, '/uploads')));
 
 //
 // Make sure middleware is after all other routes

@@ -25,15 +25,10 @@ const Navbar = () => {
   return (
     <CenterContainer>
       <nav className={classes.nav}>
-        <div className={classes.headerLogo}>
-          <Link to='/'>
-            <Logo />
-          </Link>
-        </div>
+        <div className={classes.headerLogo}></div>
 
         <ul className={classes.desktop_container}>
           <NavigationItems />
-          <OutlinedNavBtn to='/quote' content='Quote' />
         </ul>
         <HamburgerMenu
           showBack={showSideDrawer}
