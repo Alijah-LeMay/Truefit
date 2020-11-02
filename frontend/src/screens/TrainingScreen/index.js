@@ -7,6 +7,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import CenterContainer from '../../components/utils/CenterContainer';
 import Card from '../../components/utils/Card';
 import MyButton from '../../components/utils/Button';
+import Location from '../../components/utils/Location';
 
 import MiniForm from './MiniForm';
 
@@ -38,9 +39,7 @@ const TrainingScreen = () => {
                     <p>Altamonte Springs, FL 32714</p>
                   </Col>
                   <Col>
-                    <h3>google map integration</h3>
-                    <h3>google map integration</h3>
-                    <h3>google map integration</h3>
+                    <Location src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.577888452477!2d-81.39420124851154!3d28.67235508231573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7717b9b4e0a89%3A0xa7bc3d1f48251639!2sFitness%20Xperts!5e0!3m2!1sen!2sus!4v1604347525661!5m2!1sen!2sus' />
                   </Col>
                 </Row>
                 <div>
