@@ -18,13 +18,19 @@ import CenterContainer from './components/utils/CenterContainer';
 import LoginScreen from './screens/LoginScreen';
 
 import LandingScreen from './screens/LandingScreen';
+import TrainingScreen from './screens/TrainingScreen';
+import MealScreen from './screens/MealScreen';
 
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <StyleRoot>
         <Fragment>
-          <CenterContainer bgColor='black' bgPadding='50px 0 0 0'>
+          <CenterContainer
+            bgColor='black'
+            bgPadding='50px 0 0 0'
+            width='1370px'
+          >
             <ImageBanner
               imageLOC={TrueFit}
               altText='Home page Banner'
@@ -36,6 +42,8 @@ const App = () => (
           <Navbar />
           <Switch>
             <Route exact path='/' component={LandingScreen} />
+            <Route exact path='/training' component={TrainingScreen} />
+            <Route exact path='/meals' component={MealScreen} />
             <Route exact path='/login' component={LoginScreen} />
           </Switch>
           <Footer />

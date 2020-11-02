@@ -69,35 +69,35 @@ const Footer = () => {
                 </Link>
               </li>
               <li style={rStyle.li}>
-                <Link to='/services' style={rStyle.a}>
+                <Link to='/training' style={rStyle.a}>
                   <p key='r2' style={rStyle.aHover}>
-                    Services
+                    In Person Training
                   </p>
                 </Link>
               </li>
               <li style={rStyle.li}>
-                <Link to='/ourwork' style={rStyle.a}>
+                <Link to='/meals' style={rStyle.a}>
                   <p key='r3' style={rStyle.aHover}>
-                    Our Work
+                    Meal Plans
                   </p>
                 </Link>
               </li>
-              {/* <li style={rStyle.li}>
-                <Link to='/blog' style={rStyle.a}>
+              <li style={rStyle.li}>
+                <Link to='/testimonials' style={rStyle.a}>
                   <p key='r4' style={rStyle.aHover}>
-                    Blog
+                    Testimonials
                   </p>
                 </Link>
-              </li> */}
-              {/* <li style={rStyle.li}>
-                <Link to='/privacy' style={rStyle.a}>
+              </li>
+              <li style={rStyle.li}>
+                <Link to='/contact' style={rStyle.a}>
                   <p key='r5' style={rStyle.aHover}>
-                    Privacy Policy
+                    Contact Us
                   </p>
                 </Link>
-              </li> */}
+              </li>
             </ul>
-            <h3 style={rStyle.copyRight}>&copy; LemaTech LLC 2020 </h3>
+            <h3 style={rStyle.copyRight}>&copy; 2020 TrueFit </h3>
           </div>
         </CenterContainer>
       </div>
