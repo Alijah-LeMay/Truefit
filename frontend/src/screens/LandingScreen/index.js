@@ -22,17 +22,19 @@ const Landing = () => {
                 <img src={Hannah_true} style={{ width: '100%' }} />
               </Col>
               <Col md={8}>
-                <h4>Hannah True</h4>
-                <h4>NSCA - Certified Strength and Conditioning Coach</h4>
-                <div>
-                  Enjoy meeting Trainer Hannah through a video chat and let us
-                  know how we can help YOU!
+                <div className={classes.title_container}>
+                  <h3>Hannah True</h3>
+                  <h3>NSCA - Certified Strength and Conditioning Coach</h3>
+                  <p style={{ textAlign: 'center' }}>
+                    Enjoy meeting Trainer Hannah through a video chat and let us
+                    know how we can help YOU!
+                  </p>
                 </div>
               </Col>
             </Row>
           </Container>
-          <div>
-            <h4>At TRUE FIT,</h4>
+          <div className={classes.description_container}>
+            <h3>At TRUE FIT,</h3>
             <p>
               We believe in efficient training and sustainable nutrition for
               results you can keep. With customized workouts and nutrition plans
@@ -41,22 +43,31 @@ const Landing = () => {
               and keep your results, we want to educate you along the way!
             </p>
           </div>
-          <div>
-            <Card>
+          <div className={classes.cards_container}>
+            <Card bgColor='#7a7a7a' padding='7px 0'>
               <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <h4>3 Workouts a Week</h4>
-                <p>$150 / Month</p>
-                <MyButton
-                  content='purchase'
-                  to='/'
-                  styleVariant='clear'
-                  hoverColor='red'
-                />
+                <div>
+                  <h3>3 Workouts a Week</h3>
+                </div>
+                <div>
+                  <p>$150 / Month</p>
+                </div>
+
+                <div>
+                  <MyButton
+                    content='Purchase'
+                    to='/'
+                    styleVariant='clear'
+                    color='#6ec1e4'
+                    hoverColor='white'
+                    fontSize='1.6rem'
+                  />
+                </div>
               </div>
             </Card>
           </div>
-          <div>
-            <h4>What All Programs Include</h4>
+          <div className={classes.programs_container}>
+            <h3>What All Programs Include</h3>
             <ul>
               <li>
                 Introductory video chat with Trainer Hannah to discuss your
@@ -69,8 +80,8 @@ const Landing = () => {
               <li>Nutrition plan and coaching suited to your needs</li>
               <li>RESULTS!</li>
             </ul>
-            <h4>How It Works:</h4>
-            <ul>
+            <h3>How It Works:</h3>
+            <ul style={{ listStyleType: 'decimal' }}>
               <li>Choose the plan that suits you.</li>
               <li>
                 Complete checkout process, including your personal information.
@@ -90,8 +101,10 @@ const Landing = () => {
             </ul>
           </div>
           <div>login field/ api</div>
-          <div>
-            <h4>Our Clients</h4>
+          <div>login field/ api</div>
+          <div>login field/ api</div>
+          <div className={classes.clients_container}>
+            <h3>Our Clients</h3>
             <p>
               I work with children, adults, athletes, and the elderly, those who
               are looking for weight loss, muscle gain, rehabilitation, relief

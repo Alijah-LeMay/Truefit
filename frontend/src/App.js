@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { StyleRoot } from 'radium';
 
+import classes from './App.module.css';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -20,6 +21,8 @@ import LoginScreen from './screens/LoginScreen';
 import LandingScreen from './screens/LandingScreen';
 import TrainingScreen from './screens/TrainingScreen';
 import MealScreen from './screens/MealScreen';
+import TestimonialsScreen from './screens/TestimonialsScreen';
+import ContactScreen from './screens/ContactScreen';
 
 const App = () => (
   <Provider store={store}>
@@ -44,9 +47,11 @@ const App = () => (
             <Route exact path='/' component={LandingScreen} />
             <Route exact path='/training' component={TrainingScreen} />
             <Route exact path='/meals' component={MealScreen} />
+            <Route exact path='/testimonials' component={TestimonialsScreen} />
+            <Route exact path='/contact' component={ContactScreen} />
             <Route exact path='/login' component={LoginScreen} />
           </Switch>
-          <Footer />
+          <Footer bgColor='black' fontColor='white' />
         </Fragment>
       </StyleRoot>
     </BrowserRouter>

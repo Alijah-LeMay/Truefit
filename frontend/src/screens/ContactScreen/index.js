@@ -1,4 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
+// Assets
+import classes from './ContactScreen.module.css';
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../store/actions/userActions';
@@ -8,14 +10,12 @@ import CenterContainer from '../../components/utils/CenterContainer';
 import FormField from '../../components/utils/FormField';
 import MyButton from '../../components/utils/Button';
 
-const LoginScreen = ({ history }) => {
+const ContactScreen = ({ history }) => {
   const dispatch = useDispatch();
   const [formState, setFormState] = useState({
     email: { value: '' },
     password: { value: '' },
   });
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
 
   const formConfig = {
     email: {
@@ -32,11 +32,6 @@ const LoginScreen = ({ history }) => {
   for (let key in formState) {
     formElements.push({ id: key, setup: formConfig[key] });
   }
-  useEffect(() => {
-    if (userInfo) {
-      history.push('/admin');
-    }
-  }, [userInfo, history]);
 
   const inputChangedHandler = (event, inputIdentifier) => {
     formElements.forEach((formElement) => {
@@ -56,10 +51,13 @@ const LoginScreen = ({ history }) => {
   };
 
   return (
-    <Fragment>
-      <CenterContainer>
+    <CenterContainer>
+      <div className={classes.contactScreen_container}>
+        <h3>Telephone Number</h3>
+        <h3>407-923-9330</h3>
+        <p>Or complete the form below.</p>
+        <p>Your information is secure with us and not sold to anyone. </p>
         <form onSubmit={submitHandler}>
-          <h2>Administrator Login</h2>
           {formElements.map((formElement) => (
             <FormField
               key={formElement.id}
@@ -71,9 +69,9 @@ const LoginScreen = ({ history }) => {
           ))}
           <MyButton content='Submit' variant='submit' />
         </form>
-      </CenterContainer>
-    </Fragment>
+      </div>
+    </CenterContainer>
   );
 };
 
-export default LoginScreen;
+export default ContactScreen;

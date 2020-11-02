@@ -1,3 +1,48 @@
 .landingScreen_container {
-  padding: 80px 0;
+  padding: 80px 50px;
+}
+.landingScreen_container h3 {
+  text-align: left;
+}
+.title_container h3 {
+  color: #7a7a7a;
+  padding: 20px 0;
+}
+.title_container p {
+  color: #6ec1e4;
+  padding: 40px 0;
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.description_container {
+  padding: 0 0 20px 0;
+}
+.description_container h3 {
+  color: #7a7a7a;
+  font-weight: 400;
+  padding: 10px 0 20px 0;
+}
+.cards_container {
+  padding: 20px;
+}
+.cards_container div {
+  padding: 0 10px;
+  margin: auto;
+}
+.cards_container p {
+  color: white;
+}
+
+.programs_container h3 {
+  padding: 40px 0 0 0;
+}
+.programs_container ul {
+  color: #7a7a7a;
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.clients_container h3 {
+  padding: 40px 0 0 0;
 }

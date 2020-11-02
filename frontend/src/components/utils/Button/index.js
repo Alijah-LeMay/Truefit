@@ -73,7 +73,7 @@ const MyButton = ({
           height: 'auto',
           fontSize: fontSize ? fontSize : '1.2rem',
           borderRadius: radius ? radius : '40px',
-          backgroundColor: bgColor ? bgColor : 'white',
+          backgroundColor: bgColor && bgColor,
           color: color ? color : '#333',
           borderWidth: '0px',
           ':hover': {
@@ -90,7 +90,7 @@ const MyButton = ({
           height: 'auto',
           fontSize: fontSize ? fontSize : '1.2rem',
           borderRadius: radius ? radius : '40px',
-          backgroundColor: bgColor ? bgColor : 'white',
+          backgroundColor: bgColor && bgColor,
           color: color ? color : '#333',
           borderWidth: '0px',
           ':hover': {
