@@ -1,3 +1,12 @@
 .contactScreen_container {
   padding: 80px 50px;
+  margin: 0;
+  align-self: center;
+  width: 1000px;
+  max-width: 100%;
+}
+.contactScreen_container h3,
+.contactScreen_container p {
+  text-align: left;
+  padding-bottom: 15px;
 }

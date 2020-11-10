@@ -13,18 +13,28 @@ import MyButton from '../../components/utils/Button';
 const ContactScreen = ({ history }) => {
   const dispatch = useDispatch();
   const [formState, setFormState] = useState({
+    name: { value: '' },
     email: { value: '' },
-    password: { value: '' },
+    phone: { value: '' },
+    message: { value: '' },
   });
 
   const formConfig = {
+    name: {
+      type: 'input',
+      config: { type: 'text', placeholder: 'Name' },
+    },
     email: {
       type: 'input',
-      config: { type: 'email', placeholder: 'Your Email' },
+      config: { type: 'email', placeholder: 'Email' },
     },
-    password: {
+    phone: {
       type: 'input',
-      config: { type: 'text', placeholder: 'Your password' },
+      config: { type: 'text', placeholder: 'Phone' },
+    },
+    message: {
+      type: 'input',
+      config: { type: 'text', placeholder: 'Message' },
     },
   };
   // Prepare formState objects
@@ -67,7 +77,17 @@ const ContactScreen = ({ history }) => {
               changed={(event) => inputChangedHandler(event, formElement.id)}
             />
           ))}
-          <MyButton content='Submit' variant='submit' />
+          <MyButton
+            content='Submit'
+            variant='submit'
+            styleVariant='clear'
+            horMargin='0 0 0 2%'
+            radius='7px'
+            padding='10px'
+            color='white'
+            bgColor='#7a7a7a'
+            hoverColor='#6ec1e4'
+          />
         </form>
       </div>
     </CenterContainer>

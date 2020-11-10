@@ -1,3 +1,19 @@
 .mealScreen_container {
   padding: 80px 50px;
 }
+
+.mealScreen_container h3 {
+  text-align: left;
+  padding: 0 0 0 40px;
+}
+.mealScreen_container p {
+  text-align: center;
+}
+.mealScreen_container a {
+  text-decoration: underline;
+  color: black;
+  font-size: 1.3rem;
+}
+.image_thmb {
+  padding: 20px 10px;
+}

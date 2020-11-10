@@ -32,12 +32,6 @@ const LoginScreen = ({ history }) => {
   for (let key in formState) {
     formElements.push({ id: key, setup: formConfig[key] });
   }
-  useEffect(() => {
-    if (userInfo) {
-      history.push('/admin');
-    }
-  }, [userInfo, history]);
-
   const inputChangedHandler = (event, inputIdentifier) => {
     formElements.forEach((formElement) => {
       if (inputIdentifier === formElement.id) {
@@ -54,6 +48,12 @@ const LoginScreen = ({ history }) => {
     console.log(formState.email, formState.password);
     dispatch(login(formState.email, formState.password));
   };
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push('/admin');
+    }
+  }, [userInfo, history]);
 
   return (
     <Fragment>

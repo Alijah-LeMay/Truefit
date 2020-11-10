@@ -18,31 +18,45 @@ const MealScreen = () => {
   return (
     <div className={classes.mealScreen_container}>
       <CenterContainer bgPadding='25px 0'>
-        <div className={classes.landingScreen_container}>
-          <Row>
-            <Col md={10}>
-              <h3>Want A Meal Plan?</h3>
-              <p>
-                If you’re in the Central Florida area, check out our sister
-                company TRUE FIT FUEL at{' '}
-                <a href='//www.truefitfuel.com'>www.truefitfuel.com</a>
-              </p>
-              <p>
-                You can get prepared meals that will help you reach your goals
-                faster!
-              </p>
-              <div>
-                <img src={Barbeque_Chicken} alt={Barbeque_Chicken} />
-                <img src={Cilantro_Lime_Shrimp} alt={Cilantro_Lime_Shrimp} />
-                <img src={Salmon_Burgers} alt={Salmon_Burgers} />
-                <img src={Turkey_Kale_Stew} alt={Turkey_Kale_Stew} />
-              </div>
-            </Col>
-            <Col md={2}>
-              <img src={TrueFitFuel} style={{ maxWidth: '100%' }} />
-            </Col>
-          </Row>
-        </div>
+        <Row>
+          <Col md={10}>
+            <h3>Want A Meal Plan?</h3>
+            <p>
+              If you’re in the Central Florida area, check out our sister
+              company TRUE FIT FUEL at{' '}
+            </p>
+            <a href='//www.truefitfuel.com'>www.truefitfuel.com</a>
+            <p>
+              You can get prepared meals that will help you reach your goals
+              faster!
+            </p>
+            <div>
+              <img
+                src={Barbeque_Chicken}
+                alt={Barbeque_Chicken}
+                className={classes.image_thmb}
+              />
+              <img
+                src={Cilantro_Lime_Shrimp}
+                alt={Cilantro_Lime_Shrimp}
+                className={classes.image_thmb}
+              />
+              <img
+                src={Salmon_Burgers}
+                alt={Salmon_Burgers}
+                className={classes.image_thmb}
+              />
+              <img
+                src={Turkey_Kale_Stew}
+                alt={Turkey_Kale_Stew}
+                className={classes.image_thmb}
+              />
+            </div>
+          </Col>
+          <Col md={2}>
+            <img src={TrueFitFuel} style={{ maxWidth: '100%' }} />
+          </Col>
+        </Row>
       </CenterContainer>
     </div>
   );

@@ -14,30 +14,29 @@ const MyButton = ({
   variant,
   to,
   children,
-  dir,
+  direction,
   radius,
+  decoration,
+  horMargin,
 }) => {
-  let direction;
-  if (dir === 'left') {
-    direction = 'flex-start';
-  }
-  if (dir === 'right') {
-    direction = 'flex-end';
-  }
   let rStyle = {
-    containerDiv: { alignSelf: direction ? direction : 'center' },
+    containerDiv: {
+      display: 'block',
+      margin: horMargin && horMargin,
+    },
     //  for buttons that do not contain an inner P
     submitBtn: {
+      display: 'block',
+      margin: horMargin && horMargin,
       border: 'none',
-      textDecoration: 'none',
+      textDecoration: decoration ? decoration : 'none',
       color: color ? color : '#333',
       padding: padding ? padding : '15px 30px',
-      backgroundColor: 'white',
+      backgroundColor: bgColor ? bgColor : 'white',
       borderRadius: radius ? radius : '40px',
       fontSize: fontSize ? fontSize : '1.2rem',
       boxShadow:
         '0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 -2px 5px 0 rgba(0, 0, 0, 0.19)',
-      display: 'inline-block',
       ':hover': {
         backgroundColor: bgHoverColor ? bgHoverColor : 'rgb(131, 126, 126)',
         color: hoverColor ? hoverColor : 'white',
@@ -48,9 +47,12 @@ const MyButton = ({
     },
     // if the button contains an inner P
     buttonPara: {
+      margin: 'auto',
+      textDecoration: decoration ? decoration : 'none',
+      textAlign: direction && direction,
       color: color ? color : '#333',
       padding: padding ? padding : '15px 30px',
-      backgroundColor: 'white',
+      backgroundColor: bgColor ? bgColor : 'white',
       borderRadius: radius ? radius : '40px',
       fontSize: fontSize ? fontSize : '1.2rem',
       boxShadow:
@@ -66,14 +68,19 @@ const MyButton = ({
   if (styleVariant)
     if (styleVariant === 'clear') {
       rStyle = {
-        containerDiv: { alignSelf: direction && direction },
+        containerDiv: {
+          display: 'block',
+          margin: horMargin && horMargin,
+        },
         submitBtn: {
-          display: 'inline-block',
+          display: 'block',
+          margin: horMargin && horMargin,
           padding: padding ? padding : '15px',
+          textDecoration: decoration ? decoration : 'none',
           height: 'auto',
           fontSize: fontSize ? fontSize : '1.2rem',
           borderRadius: radius ? radius : '40px',
-          backgroundColor: bgColor && bgColor,
+          backgroundColor: bgColor ? bgColor : 'rgba(0,0,0,0)',
           color: color ? color : '#333',
           borderWidth: '0px',
           ':hover': {
@@ -85,7 +92,8 @@ const MyButton = ({
           textDecoration: 'none',
         },
         buttonPara: {
-          display: 'inline-block',
+          textAlign: direction && direction,
+          textDecoration: decoration ? decoration : 'none',
           padding: padding ? padding : '15px',
           height: 'auto',
           fontSize: fontSize ? fontSize : '1.2rem',
@@ -99,6 +107,10 @@ const MyButton = ({
         },
       };
     }
+  // sanity check
+  if (!to) {
+    to = '/';
+  }
   //  AS DEFAULT
   //  React Router Button
   //  INSIDE LINKS

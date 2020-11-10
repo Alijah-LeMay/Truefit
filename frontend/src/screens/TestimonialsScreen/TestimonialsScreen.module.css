@@ -1,3 +1,10 @@
 .testimonialsScreen_container {
   padding: 80px 50px;
 }
+.testimonialsScreen_container p {
+  padding: 40px 0 0 0;
+}
+.testimonialsScreen_container span {
+  font-weight: bold;
+  font-style: italic;
+}

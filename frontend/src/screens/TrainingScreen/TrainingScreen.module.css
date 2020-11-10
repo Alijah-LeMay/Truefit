@@ -1,7 +1,20 @@
 .training_container {
   padding: 80px 50px;
 }
+.action_container h3 {
+  padding: 20px 0;
+}
+.action_container h2 {
+  padding: 0 0 30px 0;
+}
 
+.addressInfo_container {
+  padding: 20px 0;
+}
+.featuredImages_container {
+  padding: 60px 0 0 0;
+}
 .session_image {
   padding: 0 40px;
+  max-width: 30%;
 }
