@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Navbar.module.css';
 
-const NavigationItems = ({ mobile, color }) => {
-  let currentlyActiveStyle = { color: '#4bb781' };
+const NavigationItems = ({ clicked }) => {
+  let currentlyActiveStyle = { backgroundColor: '#6ec1e4', color: 'black' };
 
   let navItems = [
     { to: '/', name: 'Home' },
@@ -21,6 +21,7 @@ const NavigationItems = ({ mobile, color }) => {
             className={classes.wideLink}
             exact
             activeStyle={currentlyActiveStyle}
+            onClick={clicked}
             to={item.to}
           >
             {item.name}

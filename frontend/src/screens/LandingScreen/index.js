@@ -64,6 +64,69 @@ const Landing = () => {
               </div>
             </div>
           </Card>
+          <Card bgColor='#7a7a7a' padding='7px 0'>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <div>
+                <h3>3 Workouts A Week + Monthly Video-Chat Sessions</h3>
+              </div>
+              <div>
+                <p>$180 / Month</p>
+              </div>
+
+              <div>
+                <MyButton
+                  content='Purchase'
+                  to='/'
+                  styleVariant='clear'
+                  color='#6ec1e4'
+                  hoverColor='white'
+                  fontSize='1.6rem'
+                />
+              </div>
+            </div>
+          </Card>
+          <Card bgColor='#7a7a7a' padding='7px 0'>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <div>
+                <h3>4 Workouts A Week</h3>
+              </div>
+              <div>
+                <p>$200 / Month</p>
+              </div>
+
+              <div>
+                <MyButton
+                  content='Purchase'
+                  to='/'
+                  styleVariant='clear'
+                  color='#6ec1e4'
+                  hoverColor='white'
+                  fontSize='1.6rem'
+                />
+              </div>
+            </div>
+          </Card>
+          <Card bgColor='#7a7a7a' padding='7px 0'>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <div>
+                <h3>4 Workouts A Week + Monthly Video-Chat Sessions</h3>
+              </div>
+              <div>
+                <p>$230 / Month</p>
+              </div>
+
+              <div>
+                <MyButton
+                  content='Purchase'
+                  to='/'
+                  styleVariant='clear'
+                  color='#6ec1e4'
+                  hoverColor='white'
+                  fontSize='1.6rem'
+                />
+              </div>
+            </div>
+          </Card>
         </div>
         <div className={classes.programs_container}>
           <h3>What All Programs Include</h3>

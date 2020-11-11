@@ -1,24 +1,27 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 // Assets
 import classes from './ContactScreen.module.css';
 // Redux
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../store/actions/userActions';
+import { useSelector } from 'react-redux';
 // My Components
 
 import CenterContainer from '../../components/utils/CenterContainer';
 import FormField from '../../components/utils/FormField';
 import MyButton from '../../components/utils/Button';
+import MyReCaptcha from '../../components/utils/MyReCaptcha';
 
-const ContactScreen = ({ history }) => {
-  const dispatch = useDispatch();
+const ContactScreen = () => {
   const [formState, setFormState] = useState({
     name: { value: '' },
     email: { value: '' },
     phone: { value: '' },
     message: { value: '' },
   });
+  const captcha = useSelector((state) => state.captcha);
+  const { captcha: currentCaptcha } = captcha;
 
+  const [loadingSubmit, setLoadingSubmit] = useState(false);
   const formConfig = {
     name: {
       type: 'input',
@@ -54,10 +57,28 @@ const ContactScreen = ({ history }) => {
     });
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(formState.email, formState.password);
-    dispatch(login(formState.email, formState.password));
+    setLoadingSubmit(true);
+    const { name, email, phone, message } = formState;
+
+    if (!currentCaptcha || currentCaptcha.expired === 'true') {
+      console.log('something went wrong, try again');
+      return;
+    } else {
+      try {
+        await axios.post('/api/send', {
+          name,
+          email,
+          phone,
+          message,
+        });
+        console.log('Message Sent');
+      } catch (error) {
+        console.log('Message failed to send');
+      }
+      setLoadingSubmit(false);
+    }
   };
 
   return (
@@ -77,6 +98,10 @@ const ContactScreen = ({ history }) => {
               changed={(event) => inputChangedHandler(event, formElement.id)}
             />
           ))}
+          <div style={{ maxWidth: '350px' }}>
+            <MyReCaptcha />
+          </div>
+
           <MyButton
             content='Submit'
             variant='submit'

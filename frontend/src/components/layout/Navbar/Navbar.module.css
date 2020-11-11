@@ -33,7 +33,7 @@
   font-size: 1.1rem;
 }
 .desktop_container li a:hover {
-  color: #4bb781;
+  color: #6ec1e4;
 }
 .regular_nav_li a {
   color: white;
@@ -84,10 +84,10 @@
   align-items: center;
 }
 .drawerlist_container li {
-  border-bottom: 1px solid#4bb781;
+  border-bottom: 1px solid grey;
 }
 .drawerlist_container li:hover {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #6ec1e4;
 }
 .drawerlist_container li a {
   padding: 15px 0;

@@ -33,6 +33,9 @@
 .cards_container p {
   color: white;
 }
+.cards_container h3 {
+  text-align: center;
+}
 
 .programs_container h3 {
   padding: 40px 0 0 0;

@@ -4,7 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { connect } from 'react-redux';
 import { setCaptcha } from '../../../store/actions/captchaActions';
 
-const SITE_KEY = '6LfjTuAZAAAAAODtU1CfMXETuWYjrWks0atG91fv';
+const TEST_SITE_KEY = '6LfjTuAZAAAAAODtU1CfMXETuWYjrWks0atG91fv';
 const DELAY = 1500;
 
 class MyReCaptcha extends Component {
@@ -29,6 +29,7 @@ class MyReCaptcha extends Component {
   handleChange = (value) => {
     console.log('Captcha value:', value);
     // console.log(this.state);
+    this.setState({ expired: 'false' });
     this.props.setCaptcha(this.state);
 
     // if value is null recaptcha expired
@@ -49,7 +50,7 @@ class MyReCaptcha extends Component {
             style={{ display: 'inline-block' }}
             theme='dark'
             ref={this._reCaptchaRef}
-            sitekey={SITE_KEY}
+            sitekey={TEST_SITE_KEY}
             onChange={this.handleChange}
             asyncScriptOnLoad={this.asyncScriptOnLoad}
           />

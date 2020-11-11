@@ -34,7 +34,7 @@ const Footer = ({ bgColor, fontColor }) => {
       display: 'inline',
       color: fontColor ? fontColor : 'black',
       ':hover': {
-        color: '#4BB781',
+        color: '#6ec1e4',
       },
       '@media (max-width:440px)': {
         fontSize: '0.9rem',

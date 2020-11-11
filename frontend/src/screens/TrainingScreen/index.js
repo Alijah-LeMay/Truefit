@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import classes from './TrainingScreen.module.css';
+import axios from 'axios';
 
-import { Container, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 // Redux
-import { useDispatch } from 'react-redux';
 // My Components
 import CenterContainer from '../../components/utils/CenterContainer';
 import MyButton from '../../components/utils/Button';
@@ -24,6 +24,7 @@ const TrainingScreen = () => {
     phone: { value: '' },
     message: { value: '' },
   });
+  const [loadingSubmit, setLoadingSubmit] = useState(false);
 
   const formConfig = {
     name: {
@@ -59,8 +60,22 @@ const TrainingScreen = () => {
     });
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
+    setLoadingSubmit(true);
+    const { name, email, phone, message } = formState;
+    try {
+      await axios.post('/api/send', {
+        name,
+        email,
+        phone,
+        message,
+      });
+      console.log('Message Sent');
+    } catch (error) {
+      console.log('Message failed to send');
+    }
+    setLoadingSubmit(false);
   };
 
   return (
@@ -112,27 +127,29 @@ const TrainingScreen = () => {
             <h5>NSCA - CSCS Certified</h5>
             <img src={mini_profile} style={{ maxWidth: '100%' }} />
             <div>
-              {formElements.map((formElement) => (
-                <FormField
-                  key={formElement.id}
-                  type={formElement.setup.type}
-                  config={formElement.setup.config}
-                  value={formElement.setup.value}
-                  changed={(event) =>
-                    inputChangedHandler(event, formElement.id)
-                  }
+              <form onSubmit={submitHandler}>
+                {formElements.map((formElement) => (
+                  <FormField
+                    key={formElement.id}
+                    type={formElement.setup.type}
+                    config={formElement.setup.config}
+                    value={formElement.setup.value}
+                    changed={(event) =>
+                      inputChangedHandler(event, formElement.id)
+                    }
+                  />
+                ))}
+                <MyButton
+                  content='Send'
+                  horMargin='0 0 0 2%'
+                  variant='submit'
+                  padding='7px'
+                  radius='7px'
+                  color='white'
+                  bgColor='#7a7a7a'
+                  hoverColor='#6ec1e4'
                 />
-              ))}
-              <MyButton
-                content='Send'
-                horMargin='0 0 0 2%'
-                variant='submit'
-                padding='7px'
-                radius='7px'
-                color='white'
-                bgColor='#7a7a7a'
-                hoverColor='#6ec1e4'
-              />
+              </form>
             </div>
           </Col>
         </Row>
