@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import classes from './TrainingScreen.module.css';
-import axios from 'axios';
+import React, { useState } from 'react'
+import classes from './TrainingScreen.module.css'
+import axios from 'axios'
 
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap'
 
 // Redux
 // My Components
-import CenterContainer from '../../components/utils/CenterContainer';
-import MyButton from '../../components/utils/Button';
-import Location from '../../components/utils/Location';
-import FormField from '../../components/utils/FormField';
+import CenterContainer from '../../components/utils/CenterContainer'
+import MyButton from '../../components/utils/Button'
+import Location from '../../components/utils/Location'
+import FormField from '../../components/utils/FormField'
 
 // Assets
-import mini_profile from '../../assets/mini_profile.jpeg';
-import session1 from '../../assets/InPersonTraining/session1.png';
-import session2 from '../../assets/InPersonTraining/session2.png';
-import session3 from '../../assets/InPersonTraining/session3.png';
+import mini_profile from '../../assets/mini_profile.jpeg'
+import session1 from '../../assets/InPersonTraining/session1.png'
+import session2 from '../../assets/InPersonTraining/session2.png'
+import session3 from '../../assets/InPersonTraining/session3.png'
 
 const TrainingScreen = () => {
   const [formState, setFormState] = useState({
@@ -23,8 +23,8 @@ const TrainingScreen = () => {
     email: { value: '' },
     phone: { value: '' },
     message: { value: '' },
-  });
-  const [loadingSubmit, setLoadingSubmit] = useState(false);
+  })
+  const [loadingSubmit, setLoadingSubmit] = useState(false)
 
   const formConfig = {
     name: {
@@ -43,11 +43,11 @@ const TrainingScreen = () => {
       type: 'input',
       config: { type: 'text', placeholder: 'Message' },
     },
-  };
+  }
   // Prepare formState objects
-  const formElements = [];
+  const formElements = []
   for (let key in formState) {
-    formElements.push({ id: key, setup: formConfig[key] });
+    formElements.push({ id: key, setup: formConfig[key] })
   }
   const inputChangedHandler = (event, inputIdentifier) => {
     formElements.forEach((formElement) => {
@@ -55,28 +55,28 @@ const TrainingScreen = () => {
         setFormState({
           ...formState,
           [inputIdentifier]: event.target.value,
-        });
+        })
       }
-    });
-  };
+    })
+  }
 
   const submitHandler = async (e) => {
-    e.preventDefault();
-    setLoadingSubmit(true);
-    const { name, email, phone, message } = formState;
+    e.preventDefault()
+    setLoadingSubmit(true)
+    const { name, email, phone, message } = formState
     try {
       await axios.post('/api/send', {
         name,
         email,
         phone,
         message,
-      });
-      console.log('Message Sent');
+      })
+      console.log('Message Sent')
     } catch (error) {
-      console.log('Message failed to send');
+      console.log('Message failed to send')
     }
-    setLoadingSubmit(false);
-  };
+    setLoadingSubmit(false)
+  }
 
   return (
     <div className={classes.training_container}>
@@ -155,7 +155,7 @@ const TrainingScreen = () => {
         </Row>
       </CenterContainer>
     </div>
-  );
-};
+  )
+}
 
-export default TrainingScreen;
+export default TrainingScreen

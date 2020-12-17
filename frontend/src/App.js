@@ -1,33 +1,34 @@
-import React, { Fragment } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { StyleRoot } from 'radium';
+import React, { Fragment } from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { StyleRoot } from 'radium'
 
-import classes from './App.module.css';
+import classes from './App.module.css'
 // Redux
-import { Provider } from 'react-redux';
-import store from './store';
+import { Provider } from 'react-redux'
+import store from './store'
 
-import TrueFit from './assets/TrueFit.png';
+import TrueFit from './assets/TrueFit.png'
 
 // My Components
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import ImageBanner from './components/utils/ImageBanner';
-import CenterContainer from './components/utils/CenterContainer';
-import { useTracking } from './components/utils/useTracking';
-import ScrollToTop from './components/utils/ScrollToTop';
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import ImageBanner from './components/utils/ImageBanner'
+import CenterContainer from './components/utils/CenterContainer'
+import { useTracking } from './components/utils/useTracking'
+import ScrollToTop from './components/utils/ScrollToTop'
 
 // My Screens
-import LoginScreen from './screens/LoginScreen';
+import LoginScreen from './screens/LoginScreen'
 
-import LandingScreen from './screens/LandingScreen';
-import TrainingScreen from './screens/TrainingScreen';
-import MealScreen from './screens/MealScreen';
-import TestimonialsScreen from './screens/TestimonialsScreen';
-import ContactScreen from './screens/ContactScreen';
+import LandingScreen from './screens/LandingScreen'
+import TrainingScreen from './screens/TrainingScreen'
+import MealScreen from './screens/MealScreen'
+import TestimonialsScreen from './screens/TestimonialsScreen'
+import ContactScreen from './screens/ContactScreen'
+import OrderScreen from './screens/OrderScreen'
 
 export const App = () => {
-  useTracking('');
+  useTracking('')
   // input tracking key (G-########)
   // to track analytics
   return (
@@ -49,11 +50,12 @@ export const App = () => {
         <Route exact path='/testimonials' component={TestimonialsScreen} />
         <Route exact path='/contact' component={ContactScreen} />
         <Route exact path='/login' component={LoginScreen} />
+        <Route exact path='/order' component={OrderScreen} />
       </Switch>
       <Footer bgColor='black' fontColor='white' />
     </Fragment>
-  );
-};
+  )
+}
 
 export default () => (
   <Provider store={store}>
@@ -64,4 +66,4 @@ export default () => (
       </StyleRoot>
     </BrowserRouter>
   </Provider>
-);
+)
