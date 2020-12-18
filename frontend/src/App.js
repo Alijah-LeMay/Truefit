@@ -25,7 +25,7 @@ import TrainingScreen from './screens/TrainingScreen'
 import MealScreen from './screens/MealScreen'
 import TestimonialsScreen from './screens/TestimonialsScreen'
 import ContactScreen from './screens/ContactScreen'
-import OrderScreen from './screens/OrderScreen'
+import ProductScreen from './screens/ProductScreen'
 
 export const App = () => {
   useTracking('')
@@ -50,7 +50,7 @@ export const App = () => {
         <Route exact path='/testimonials' component={TestimonialsScreen} />
         <Route exact path='/contact' component={ContactScreen} />
         <Route exact path='/login' component={LoginScreen} />
-        <Route exact path='/order' component={OrderScreen} />
+        <Route exact path='/product/:id' component={ProductScreen} />
       </Switch>
       <Footer bgColor='black' fontColor='white' />
     </Fragment>

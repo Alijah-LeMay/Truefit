@@ -5,6 +5,7 @@ const connectDB = require('./config/db')
 const path = require('path')
 const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 const userRoutes = require('./routes/userRoutes')
+const productRoutes = require('./routes/productRoutes')
 
 const app = express()
 
@@ -21,6 +22,8 @@ app.get('/', (req, res) => res.send('API Running'))
 app.use('/api/user', userRoutes)
 
 app.use('/api/send', require('./routes/sendEmail'))
+
+app.use('/api/product', productRoutes)
 //
 // Image upload route
 app.use('/api/upload', require('./routes/upload'))
