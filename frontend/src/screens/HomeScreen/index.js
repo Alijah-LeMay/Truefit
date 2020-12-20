@@ -1,20 +1,20 @@
-import React from 'react';
-import classes from './Landing.module.css';
+import React from 'react'
+import classes from './HomeScreen.module.css'
 
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap'
 
 // My Components
-import CenterContainer from '../../components/utils/CenterContainer';
-import Card from '../../components/utils/Card';
-import MyButton from '../../components/utils/Button';
+import CenterContainer from '../../components/utils/CenterContainer'
+import Card from '../../components/utils/Card'
+import MyButton from '../../components/utils/Button'
 
 // Assets
-import Hannah_true from '../../assets/Hannah_true.jpeg';
+import Hannah_true from '../../assets/Hannah_true.jpeg'
 
-const Landing = () => {
+const HomeScreen = () => {
   return (
     <CenterContainer bgPadding='25px 0'>
-      <div className={classes.landingScreen_container}>
+      <div className={classes.homeScreen_container}>
         <Container>
           <Row>
             <Col md={4}>
@@ -172,7 +172,7 @@ const Landing = () => {
         </div>
       </div>
     </CenterContainer>
-  );
-};
+  )
+}
 
-export default Landing;
+export default HomeScreen

@@ -20,7 +20,7 @@ import ScrollToTop from './components/utils/ScrollToTop'
 // My Screens
 import LoginScreen from './screens/LoginScreen'
 
-import LandingScreen from './screens/LandingScreen'
+import HomeScreen from './screens/HomeScreen'
 import TrainingScreen from './screens/TrainingScreen'
 import MealScreen from './screens/MealScreen'
 import TestimonialsScreen from './screens/TestimonialsScreen'
@@ -44,7 +44,7 @@ export const App = () => {
 
       <Navbar />
       <Switch>
-        <Route exact path='/' component={LandingScreen} />
+        <Route exact path='/' component={HomeScreen} />
         <Route exact path='/training' component={TrainingScreen} />
         <Route exact path='/meals' component={MealScreen} />
         <Route exact path='/testimonials' component={TestimonialsScreen} />
