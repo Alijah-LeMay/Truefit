@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react'
+import axios from 'axios'
 // Assets
-import classes from './ContactScreen.module.css';
+import classes from './ContactScreen.module.css'
 // Redux
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 // My Components
 
-import CenterContainer from '../../components/utils/CenterContainer';
-import FormField from '../../components/utils/FormField';
-import MyButton from '../../components/utils/Button';
-import MyReCaptcha from '../../components/utils/MyReCaptcha';
+import CenterContainer from '../../components/utils/CenterContainer'
+import FormField from '../../components/utils/FormField'
+import MyButton from '../../components/utils/Button'
+import MyReCaptcha from '../../components/utils/MyReCaptcha'
 
 const ContactScreen = () => {
   const [formState, setFormState] = useState({
@@ -17,11 +17,11 @@ const ContactScreen = () => {
     email: { value: '' },
     phone: { value: '' },
     message: { value: '' },
-  });
-  const captcha = useSelector((state) => state.captcha);
-  const { captcha: currentCaptcha } = captcha;
+  })
+  const captcha = useSelector((state) => state.captcha)
+  const { captcha: currentCaptcha } = captcha
 
-  const [loadingSubmit, setLoadingSubmit] = useState(false);
+  const [setLoadingSubmit] = useState(false)
   const formConfig = {
     name: {
       type: 'input',
@@ -39,11 +39,11 @@ const ContactScreen = () => {
       type: 'input',
       config: { type: 'text', placeholder: 'Message' },
     },
-  };
+  }
   // Prepare formState objects
-  const formElements = [];
+  const formElements = []
   for (let key in formState) {
-    formElements.push({ id: key, setup: formConfig[key] });
+    formElements.push({ id: key, setup: formConfig[key] })
   }
 
   const inputChangedHandler = (event, inputIdentifier) => {
@@ -52,19 +52,19 @@ const ContactScreen = () => {
         setFormState({
           ...formState,
           [inputIdentifier]: event.target.value,
-        });
+        })
       }
-    });
-  };
+    })
+  }
 
   const submitHandler = async (e) => {
-    e.preventDefault();
-    setLoadingSubmit(true);
-    const { name, email, phone, message } = formState;
+    e.preventDefault()
+    setLoadingSubmit(true)
+    const { name, email, phone, message } = formState
 
     if (!currentCaptcha || currentCaptcha.expired === 'true') {
-      console.log('something went wrong, try again');
-      return;
+      console.log('something went wrong, try again')
+      return
     } else {
       try {
         await axios.post('/api/send', {
@@ -72,14 +72,14 @@ const ContactScreen = () => {
           email,
           phone,
           message,
-        });
-        console.log('Message Sent');
+        })
+        console.log('Message Sent')
       } catch (error) {
-        console.log('Message failed to send');
+        console.log('Message failed to send')
       }
-      setLoadingSubmit(false);
+      setLoadingSubmit(false)
     }
-  };
+  }
 
   return (
     <CenterContainer>
@@ -116,7 +116,7 @@ const ContactScreen = () => {
         </form>
       </div>
     </CenterContainer>
-  );
-};
+  )
+}
 
-export default ContactScreen;
+export default ContactScreen

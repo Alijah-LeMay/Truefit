@@ -113,9 +113,21 @@ const TrainingScreen = () => {
                 </Col>
               </Row>
               <div className={classes.featuredImages_container}>
-                <img src={session1} className={classes.session_image} />
-                <img src={session2} className={classes.session_image} />
-                <img src={session3} className={classes.session_image} />
+                <img
+                  src={session1}
+                  className={classes.session_image}
+                  alt='session-1'
+                />
+                <img
+                  src={session2}
+                  className={classes.session_image}
+                  alt='session-2'
+                />
+                <img
+                  src={session3}
+                  className={classes.session_image}
+                  alt='session-3'
+                />
               </div>
             </div>
           </Col>
@@ -125,7 +137,11 @@ const TrainingScreen = () => {
             <h5>Hannah True</h5>
             <h5> Personal Trainer </h5>
             <h5>NSCA - CSCS Certified</h5>
-            <img src={mini_profile} style={{ maxWidth: '100%' }} />
+            <img
+              src={mini_profile}
+              style={{ maxWidth: '100%' }}
+              alt='Hannah True'
+            />
             <div>
               <form onSubmit={submitHandler}>
                 {formElements.map((formElement) => (

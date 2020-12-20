@@ -10,6 +10,7 @@ import MyButton from '../../components/utils/Button'
 
 // Assets
 import Hannah_true from '../../assets/Hannah_true.jpeg'
+import PayPalButton from '../../components/PayPalButton'
 
 const HomeScreen = () => {
   return (
@@ -18,7 +19,11 @@ const HomeScreen = () => {
         <Container>
           <Row>
             <Col md={4}>
-              <img src={Hannah_true} style={{ width: '100%' }} />
+              <img
+                src={Hannah_true}
+                style={{ width: '100%' }}
+                alt='Hannah True'
+              />
             </Col>
             <Col md={8}>
               <div className={classes.title_container}>
@@ -33,6 +38,7 @@ const HomeScreen = () => {
           </Row>
         </Container>
         <div className={classes.description_container}>
+          <PayPalButton planId='P-62V57177T74706343L7PX5VQ' amount={150} />
           <h3>At TRUE FIT,</h3>
           <p>
             We believe in efficient training and sustainable nutrition for

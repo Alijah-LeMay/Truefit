@@ -16,7 +16,7 @@ const ProductScreen = ({ match }) => {
   const productId = match.params.id
 
   const productDetails = useSelector((state) => state.productDetails)
-  const { loading: loadingDetails, product } = productDetails
+  const { product } = productDetails
 
   const [sdkReady, setSdkReady] = useState(false)
 
@@ -55,10 +55,7 @@ const ProductScreen = ({ match }) => {
       ) : !product ? (
         <Loader />
       ) : (
-        <PayPalButton
-          amount={product.price}
-          onSuccess={successPaymentHandler}
-        />
+        <PayPalButton amount={180} onSuccess={successPaymentHandler} />
       )}
     </div>
   )
