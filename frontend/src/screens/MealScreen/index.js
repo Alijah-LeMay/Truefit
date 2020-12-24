@@ -1,18 +1,17 @@
-import React from 'react';
-import classes from './MealScreen.module.css';
+import React from 'react'
+import classes from './MealScreen.module.css'
 
-import { Container, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap'
 
 // My Components
-import CenterContainer from '../../components/utils/CenterContainer';
-import MyButton from '../../components/utils/Button';
+import CenterContainer from '../../components/utils/CenterContainer'
 
 // Assets
-import TrueFitFuel from '../../assets/MealPlans/TrueFitFuel.jpg';
-import Barbeque_Chicken from '../../assets/MealPlans/Barbeque_Chicken.jpg';
-import Cilantro_Lime_Shrimp from '../../assets/MealPlans/Cilantro_Lime_Shrimp.jpg';
-import Salmon_Burgers from '../../assets/MealPlans/Salmon_Burgers.jpg';
-import Turkey_Kale_Stew from '../../assets/MealPlans/Turkey_Kale_Stew.jpg';
+import TrueFitFuel from '../../assets/MealPlans/TrueFitFuel.jpg'
+import Barbeque_Chicken from '../../assets/MealPlans/Barbeque_Chicken.jpg'
+import Cilantro_Lime_Shrimp from '../../assets/MealPlans/Cilantro_Lime_Shrimp.jpg'
+import Salmon_Burgers from '../../assets/MealPlans/Salmon_Burgers.jpg'
+import Turkey_Kale_Stew from '../../assets/MealPlans/Turkey_Kale_Stew.jpg'
 
 const MealScreen = () => {
   return (
@@ -54,12 +53,16 @@ const MealScreen = () => {
             </div>
           </Col>
           <Col md={2}>
-            <img src={TrueFitFuel} style={{ maxWidth: '100%' }} />
+            <img
+              src={TrueFitFuel}
+              style={{ maxWidth: '100%' }}
+              alt='TrueFitFuel'
+            />
           </Col>
         </Row>
       </CenterContainer>
     </div>
-  );
-};
+  )
+}
 
-export default MealScreen;
+export default MealScreen

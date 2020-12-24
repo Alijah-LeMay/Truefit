@@ -61,7 +61,7 @@ const HomeScreen = () => {
               <div>
                 <MyButton
                   content='Purchase'
-                  to='/'
+                  to='/product/5fdcd72ffad37c21e04c8d90'
                   styleVariant='clear'
                   color='#6ec1e4'
                   hoverColor='white'
@@ -82,7 +82,7 @@ const HomeScreen = () => {
               <div>
                 <MyButton
                   content='Purchase'
-                  to='/'
+                  to='/product/5fdcda84ce115834dc0518f7'
                   styleVariant='clear'
                   color='#6ec1e4'
                   hoverColor='white'
@@ -103,7 +103,7 @@ const HomeScreen = () => {
               <div>
                 <MyButton
                   content='Purchase'
-                  to='/'
+                  to='/product/5fe508dc6517c71d786b34d5'
                   styleVariant='clear'
                   color='#6ec1e4'
                   hoverColor='white'
@@ -124,7 +124,7 @@ const HomeScreen = () => {
               <div>
                 <MyButton
                   content='Purchase'
-                  to='/'
+                  to='/product/5fe5091c6517c71d786b34d6'
                   styleVariant='clear'
                   color='#6ec1e4'
                   hoverColor='white'

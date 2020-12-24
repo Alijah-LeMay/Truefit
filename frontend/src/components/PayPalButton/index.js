@@ -41,11 +41,10 @@ const PayPalButton = (props) => {
       setSdkReady(true)
     }
   }, [])
-  console.log(payKey)
 
   return (
     <>
-      {!sdkReady ? (
+      {!sdkReady || !payKey ? (
         <Loader />
       ) : (
         <PayPalBtn

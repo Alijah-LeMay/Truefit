@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
 
 // Assets
-import classes from './Navbar.module.css';
+import classes from './Navbar.module.css'
 
 // My Components
-import HamburgerMenu from './HamburgerMenu';
-import NavigationItems from './NavigationItems';
-import CenterContainer from '../../utils/CenterContainer';
-import Logo from '../../Logo';
+import HamburgerMenu from './HamburgerMenu'
+import NavigationItems from './NavigationItems'
+import CenterContainer from '../../utils/CenterContainer'
 
 const Navbar = () => {
-  const [showSideDrawer, setShowSideDrawer] = useState(false);
+  const [showSideDrawer, setShowSideDrawer] = useState(false)
 
   const drawerToggleHandler = () => {
-    setShowSideDrawer(!showSideDrawer);
-  };
+    setShowSideDrawer(!showSideDrawer)
+  }
   const drawerCloseHandler = () => {
-    setShowSideDrawer(false);
-  };
+    setShowSideDrawer(false)
+  }
 
-  console.log(showSideDrawer);
+  console.log(showSideDrawer)
   return (
     <CenterContainer>
       <nav className={classes.nav}>
@@ -36,7 +34,7 @@ const Navbar = () => {
         />
       </nav>
     </CenterContainer>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

@@ -14,6 +14,10 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  planId: {
+    type: String,
+    required: true,
+  },
 })
 
 module.exports = Product = mongoose.model('Product', ProductSchema)

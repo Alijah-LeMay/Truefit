@@ -12,12 +12,13 @@ const {
   createProduct,
   getAllProducts,
   getProductById,
+  updateProductById,
 } = require('../controllers/productController')
 
 // Routes
 
 router.route('/').post(createProduct).get(getAllProducts)
 
-router.route('/:id').get(getProductById)
+router.route('/:id').get(getProductById).put(updateProductById)
 
 module.exports = router

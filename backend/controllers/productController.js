@@ -6,12 +6,13 @@ const Product = require('../models/Product')
 // @access      Private / Admin
 
 const createProduct = asyncHandler(async (req, res) => {
-  const { price, name, description } = req.body
+  const { price, name, description, planId } = req.body
 
   const product = await Product.create({
     price,
     name,
     description,
+    planId,
   })
   if (product) {
     res.status(201).json({
@@ -19,6 +20,7 @@ const createProduct = asyncHandler(async (req, res) => {
       name: product.name,
       price: product.price,
       description: product.description,
+      planId: product.planId,
     })
   } else {
     res.status(400)
@@ -49,4 +51,30 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 })
 
-module.exports = { createProduct, getAllProducts, getProductById }
+// @route       PUT /api/product/:id
+// @desc        Update a product by ID
+// @access      Private
+
+const updateProductById = asyncHandler(async (req, res) => {
+  const { name, price, description, planId } = req.body
+
+  const product = await Product.findById(req.params.id)
+  if (product) {
+    product.name = name ? name : product.name
+    product.price = price ? price : product.price
+    product.description = description ? description : product.description
+    product.planId = planId ? planId : product.planId
+    const updatedProduct = await product.save()
+    res.status(201).json(updatedProduct)
+  } else {
+    res.status(404)
+    throw new Error('Product not found')
+  }
+})
+
+module.exports = {
+  createProduct,
+  getAllProducts,
+  getProductById,
+  updateProductById,
+}

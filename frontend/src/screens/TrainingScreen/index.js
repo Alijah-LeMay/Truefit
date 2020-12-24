@@ -24,7 +24,7 @@ const TrainingScreen = () => {
     phone: { value: '' },
     message: { value: '' },
   })
-  const [loadingSubmit, setLoadingSubmit] = useState(false)
+  const [setLoadingSubmit] = useState(false)
 
   const formConfig = {
     name: {
