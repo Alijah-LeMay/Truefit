@@ -33,7 +33,7 @@ export const App = () => {
   // to track analytics
   return (
     <Fragment>
-      <CenterContainer bgColor='black' bgPadding='50px 0 0 0' width='1370px'>
+      <CenterContainer bgColor='black' width='1370px'>
         <ImageBanner
           imageLOC={TrueFit}
           altText='Home page Banner'
@@ -52,7 +52,6 @@ export const App = () => {
         <Route exact path='/login' component={LoginScreen} />
         <Route exact path='/product/:id' component={ProductScreen} />
       </Switch>
-      <Footer bgColor='black' fontColor='white' />
     </Fragment>
   )
 }

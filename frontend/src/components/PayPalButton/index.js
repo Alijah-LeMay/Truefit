@@ -35,7 +35,7 @@ const PayPalButton = (props) => {
       setPayKey(clientId)
       setSdkReady(true)
     }
-    if (!window.paypal) {
+    if (!window.paypal || !payKey) {
       addPayPalScript()
     } else {
       setSdkReady(true)

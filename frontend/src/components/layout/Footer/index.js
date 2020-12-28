@@ -1,19 +1,23 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import Radium from 'radium';
-import CenterContainer from '../../utils/CenterContainer';
+import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
+import Radium from 'radium'
+import CenterContainer from '../../utils/CenterContainer'
 
-const Footer = ({ bgColor, fontColor }) => {
+const Footer = ({ bgColor, fontColor, position }) => {
   let rStyle = {
     // WHEN WORKING WITH RADIUM, THE PROPERTY IS STYLE, NOT CLASSNAME
+    masterContainer: {
+      position: position ? position : 'relative',
+      bottom: 0,
+      width: '100%',
+    },
     bckStrip: {
       height: '10px',
       backgroundColor: '#ccc',
     },
-
     innerDiv: {
-      marginTop: '40px',
-      marginBottom: '30px',
+      paddingTop: '40px',
+      paddingBottom: '30px',
     },
     ul: {
       maxWidth: '100%',
@@ -50,10 +54,10 @@ const Footer = ({ bgColor, fontColor }) => {
         fontSize: '0.9rem',
       },
     },
-  };
+  }
 
   return (
-    <Fragment>
+    <div style={rStyle.masterContainer}>
       <div style={rStyle.bckStrip}></div>
       <CenterContainer bgColor={bgColor}>
         <div style={rStyle.innerDiv}>
@@ -97,8 +101,8 @@ const Footer = ({ bgColor, fontColor }) => {
           <h3 style={rStyle.copyRight}>&copy; 2020 TrueFit </h3>
         </div>
       </CenterContainer>
-    </Fragment>
-  );
-};
+    </div>
+  )
+}
 
-export default Radium(Footer);
+export default Radium(Footer)

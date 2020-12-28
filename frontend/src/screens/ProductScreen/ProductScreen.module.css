@@ -1,0 +1,21 @@
+.productInfo_container {
+  text-align: left;
+  margin: 0;
+}
+.productInfo_container p {
+  padding-bottom: 40px;
+  color: #4bb781;
+}
+
+.mainInfo_container {
+  padding: 40px;
+  padding-top: 60px;
+}
+.bigImg {
+  width: 200px;
+}
+
+.images_container {
+  padding: 40px;
+  padding-top: 80px;
+}
